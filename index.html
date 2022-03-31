@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="Evaluación diagnóstica de Introducción al Desarrollo Front End con HTML, CSS y JavaScript" />
+        <meta name="keywords" content="HTML, CSS, JavaScript" />
+        <meta name="author" content="Camila Sáez" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="style.css" rel="stylesheet" />
+        <style>
+        * {
+                margin: 0;
+                padding: 0;
+            }
+            h1 {
+              font-style: normal;
+              font-weight: 4;
+              font-size: calc(1rem + 2vw);
+              padding: 3rem 0 3rem 1rem;
+              color: #ffffff
+            }
+            p {
+                font-size: calc(1.5rem + 0.5vw);
+                padding: 1rem;
+                color: #ffffff
+
+            }
+            @media (min-width: 800px) {
+                p {
+                    max-width: 100%;
+                }
+            }
+        </style>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"
+            integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <title>Evaluación diagnóstica</title>
+    </head>
+    <body>
+        <div id="uno"><strong><a href="index.html">INICIO</a></strong></div>
+        <div id="otro"><a href="page_1.html">01</a> / <a href="page_2.html">02</a> / <a href="page_3.html">03</a></div>
+        <div>
+            <h1><span id="saludo"></span>! Soy <span id="nombre"></span></h1>
+            <p>Esta es mi primera evaluación diagnóstica de Front-End. Utilizando como referencia ejemplos de la biblioteca <a href=https://p5js.org/es/examples/>p5.js</a> mostraré distintos tipos de interacción en torno al dibujo.</p>
+            <p>Como diseñadora, considero que una de mis fortalezas es el dibujo, por lo que quise explorar distintas maneras de hacerlo en un espacio web.</p>
+
+
+
+        </div>
+        <script>
+        var opciones = ["Hola", "Mucho gusto", "Bienvenidx","Qué tal"];
+            function setup() {
+                createCanvas(windowWidth - 50, windowHeight - 50)
+                    .position(25, 30)
+                    .style("z-index", -1);
+                document.getElementById("nombre").textContent += "Camila Sáez";
+                document.getElementById("saludo").textContent += random(opciones);
+              }
+
+            function draw() {
+                background('#ff6947');
+                textSize(30);
+                text("💜",mouseX,mouseY);
+            }
+            function windowResized() {
+                resizeCanvas(windowWidth - 50, windowHeight - 50);
+            }
+        </script>
+    </body>
+</html>
